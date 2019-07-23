@@ -6,7 +6,7 @@ const autoprefixer = require('gulp-autoprefixer')
 const cleanCSS = require('gulp-clean-css')
 
 const babel = require('gulp-babel')
-const uglify = require('gulp-uglify')
+const uglify = require('gulp-uglify-es').default
 
 const clean = require('gulp-clean')
 const size = require('gulp-filesize')
@@ -15,6 +15,7 @@ const size = require('gulp-filesize')
 let http = function() {
   return src('./dist/')
     .pipe(server({
+      host: '127.0.0.1',
       livereload: true,
       defaultFile: 'index.html',
       fallback: 'index.html',

@@ -1,4 +1,131 @@
+@import url('https://fonts.googleapis.com/css?family=Open+Sans:400,600&display=swap&subset=cyrillic');
+
+:root {
+  font-family: 'Open Sans', sans-serif;
+  font-size: 16px;
+}
+
 html, body {
 	margin: 0;
-	padding: 0;
+  padding: 0;
+  width: 100%;
+  height: 100%;
+  min-height: 100vh;
+}
+
+body {
+  display: flex;
+  flex-direction: column;
+}
+
+header {
+  background: #7c3da2;
+
+  .container {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: nowrap;
+  }
+
+  ul {
+    margin: 0;
+    padding: 0;
+  }
+  li {
+    margin: 0;
+    list-style: none;
+  }
+
+  .logo {
+    width: 150px;
+    margin-right: 2rem;
+
+    svg {
+      display: block;
+      width: 100%;
+      height: 100%;
+      margin: 0;
+    }
+  }
+
+  .main-menu {
+
+    > ul {
+      display: flex;
+      flex-direction: row;
+      flex-wrap: nowrap;
+    }
+
+    > ul > li {
+      position: relative;
+      padding: 1rem;
+      cursor: pointer;
+      will-change: background-color;
+      transition: background-color 250ms ease-in;
+
+      &:hover, &.selected {
+        background-color: #561a7c;
+        transition: background-color 200ms ease-out;
+      }
+    }
+
+    a {
+      color: #fff;
+      text-decoration: none;
+    }
+  }
+
+  .main-submenu {
+    position: absolute;
+    left: 0;
+    top: 100%;
+    box-sizing: border-box;
+    padding: 0 0 1rem 0;
+    border: 1px solid #561a7c;
+    
+    background: #af91c2;
+    white-space: nowrap;
+    
+    display: none;
+
+    &.visible {
+      display: block;
+    }
+
+    li {
+      padding: 0.5rem 2rem;
+      will-change: background-color;
+      transition: background-color 400ms ease-in;
+
+      &:hover {
+        background-color: #561a7c;
+        transition: background-color 200ms ease-out;
+      }
+    }
+
+  }
+
+}
+
+section {
+  flex-grow: 2;
+}
+
+footer {
+  padding: 2rem 0 1rem 0;
+
+  background: #0d0630;
+  background: linear-gradient(to right,  #561a7c 15%,#7c3da2 50%, #561a7c 85%);
+
+  color: #fff;
+}
+
+.container {
+  width: 100%;
+  max-width: 1200px;
+  min-width: 320px;
+  margin: 0 auto;
+
+  box-sizing: border-box;
+  padding: 0 1rem;
 }
